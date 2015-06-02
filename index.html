@@ -51,7 +51,6 @@
   <link rel="stylesheet" href="assets/css/state.css">
   <!-- Header Javascript links -->
   <!--[if lt IE 9]>
-    <!-- Required to be in the head to parse the document -->
     <script src="assets/js/lib/html5.js"></script>
     <script src="assets/js/lib/respond.min.js"></script>
   <![endif]-->
@@ -205,6 +204,63 @@
     </section>
   </div>
 
+  <!-- contact form -->
+  <div class="js-form is-hidden">
+    <form method="post" class="contact-form">
+
+      <div class="row">
+        <div class="col-narrow">
+          <label for="name"> Name</label>
+        </div>
+        <div class="col-wide">
+          <input type="text" name="name" id="name" value="" tabindex="1" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-narrow">
+          <label for="email"> Email</label>
+        </div>
+        <div class="col-wide">
+          <input type="email" name="email" id="email" value="" tabindex="2" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-narrow">
+          <label for="reason"> Subject </label>
+        </div>
+        <div class="col-wide">
+          <select id="reason">
+            <option> A question about your service </option>
+            <option> I want to be a customer </option>
+            <option> General contact </option>
+            <option> Other... </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-narrow">
+          <label for="textarea"> Message</label>
+        </div>
+        <div class="col-wide">
+          <textarea cols="40" rows="3" name="textarea" tabindex="3" id="textarea" required></textarea>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-narrow">
+          &nbsp;
+        </div>
+        <div class="col-wide">
+          <input class="js-submit contact-form__submit" type="submit" value="Submit" />
+        </div>
+      </div>
+
+    </form>
+  </div>
+
   <!-- footer -->
   <div class="row row--dark-grey row--padding-medium footer">
     <footer class="row container-wide" role="contentinfo">
@@ -241,5 +297,9 @@
       </div>
     </footer>
   </div>
+
+  <script src="assets/js/modules/contact_form/contact_form.js"></script>
+  <script src="assets/js/modules/parallax/parallax.js"></script>
+  <script src="assets/js/modules/counters/counters.js"></script>
 </body>
 </html>
