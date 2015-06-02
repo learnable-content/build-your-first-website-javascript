@@ -6,7 +6,7 @@
 </head>
 
 <style>
-
+  
   .col50 {
     width: 50%;
     float: left;
@@ -33,19 +33,63 @@
 
 <body>
 
-<div class="form-demo">
-  <div class="col50">
-    <button class="bindme">bind event</button>
+  <div class="form-demo">
+    <div class="col50">
+      <button class="bindme">bind event</button>
+    </div>
+    <div class="col50">
+      <button class="unbindme">unbind event</button>
+    </div>
+    <button class="date"> Check date </button>
   </div>
-  <div class="col50">
-    <button class="unbindme">unbind event</button>
-  </div>
-  <button class="date"> Check date </button>
-</div>
 
-<script>
+  <script>
 
-</script>
+    // variable declared with bound events
+    var
+      bindBtn   = document.querySelector('.bindme'),
+      unBindBtn = document.querySelector('.unbindme'),
+      date      = document.querySelector('.date');
+
+
+    bindBtn.addEventListener('click', bindEvent); // event automatically bound to the click event
+    unBindBtn.addEventListener('click', unbindEvent); // event automatically bound to the click event
+    date.addEventListener('click', getDate); // event automatically bound getDate function
+
+
+
+    function bindEvent(ev) {
+
+      // List of events properties
+      ev.currentTarget;
+      ev.target;
+      ev.type;
+      ev.timeStamp;
+      ev.bubbles;
+      ev.cancelable;
+      ev.isTrusted;
+      ev.defaultPrevented;
+      ev.eventPhase;
+
+      // List of events methods
+      ev.preventDefault();
+      ev.stopImmediatePropagation();
+      ev.stopPropagation();
+
+      date.addEventListener('click', getDate);
+      date.innerText = 'Check date';
+    }
+
+    function unbindEvent() {
+      date.removeEventListener('click', getDate);
+      date.innerText = 'No event';
+    }
+
+    function getDate() {
+      alert(new Date());
+    }
+
+  </script>
 
 </body>
 </html>
