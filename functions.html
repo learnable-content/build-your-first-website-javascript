@@ -1,18 +1,62 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Functions</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8">
+    <title>Functions</title>
+  </head>
+  <body>
 
-<script>
+    <button class="btn">Change color of the page</button>
 
-  function myFirstFunction() {
+    <script>
 
-  }
+      var colorMap = {
+        red: 'red',
+        black: 'black',
+        white: 'white',
+        pink: 'pink',
+        purple: 'purple',
+        blue: 'blue',
+        cyan: 'cyan',
+        teal: 'teal',
+        green: 'green',
+        gray: 'gray',
+        brown: 'brown'
+      };
 
-</script>
+      // select button
+      var button = document.querySelector('.btn');
 
-</body>
+      //add event to button
+      button.addEventListener('click', colorChangeHandler);
+
+      function colorChangeHandler() {
+        changeBackgroundColor(pickRandomProperty(colorMap))
+      }
+
+      //function for picking random object property
+      function pickRandomProperty(obj) {
+        var result,
+            count = 0;
+
+        for (var prop in obj) {
+          if (Math.random() < 1/count++){
+            result = prop;
+          }
+        }
+        return result;
+      }
+
+      function changeBackgroundColor(color) {
+        //select document body
+        var background = document.body;
+
+        //add background color as css property
+        background.style.backgroundColor = color;
+      }
+
+
+    </script>
+
+  </body>
 </html>
