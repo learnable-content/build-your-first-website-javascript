@@ -1,13 +1,34 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Arrays</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8">
+    <title>Arrays</title>
+  </head>
+  <body>
 
-  <script>
-  </script>
+    <div class="turtle__ninja"></div>
 
-</body>
+    <script>
+
+      var
+        colors = ['red', 'blue', 'purple', 'orange'],
+        el     = document.querySelector('.turtle__ninja');
+
+      el.innerText = colors;
+
+      function setItemModel(item) {
+        colors.push(item);
+        updateView();
+      }
+
+      function updateView() {
+        el.innerHTML = colors;
+      }
+
+      setItemModel('brown');
+      setItemModel('green');
+
+    </script>
+
+  </body>
 </html>
