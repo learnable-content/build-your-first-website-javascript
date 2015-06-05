@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scopes</title>
+</head>
+
+
+<body>
+
+<script>
+
+  // global scope
+  // Zoo is an object with a global scope which means it can be accessed anywhere
+  var worldZoo = {
+    animals: ['Lion', 'Bear', 'Tiger', 'Cheetah']
+  };
+
+  // function scope
+  // anotherZoo is an object with a function scope which means it can only be accessed inside of the function it was declared in
+  function localZoo() {
+    var localZoo = {
+      animals: ['Zebra', 'Cow', 'Giraffe', 'Turtle', 'Rhino']
+    };
+
+    console.log('inside of the function: ', localZoo.animals);
+    console.log('inside of the function: ', worldZoo.animals); // Can still access the global scope
+
+  }
+
+  // Invoke function to execute it
+  localZoo();
+
+  console.log('outside of the function: ', worldZoo.animals); // Will still work
+  console.log('outside of the function: ', localZoo.animals); // Will return undefined because the variable "anotherZoo" is not globally scoped
+
+
+</script>
+
+</body>
+</html>
