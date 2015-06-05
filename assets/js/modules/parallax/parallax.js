@@ -2,8 +2,6 @@
 
 var ParallaxScroll = {
 
-
-
 };
 
 ParallaxScroll.initParallax();
